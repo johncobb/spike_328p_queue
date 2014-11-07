@@ -59,26 +59,6 @@ void encode_string(char * value)
 	}
 }
 
-void encode_string_ptr(char *value);
-
-void encode_string_ptr(char *value)
-{
-
-	char tmp[strlen(value)+1];
-
-	//memcpy(ptr, tmp, sizeof(value));
-	//return ptr;
-
-	memset(tmp, '\0', strlen(value)+1);
-
-	for(int i=0; i<strlen(value); i++) {
-		tmp[i] = value[i];
-		LOG("copying [%d]=%c\r\n", i, value[i]);
-	}
-
-
-}
-
 void terminal_in_cb(uint8_t c)
 {
 	term_in = c;
